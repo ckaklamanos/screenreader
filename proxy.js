@@ -38,8 +38,8 @@ page.open( address , function (status) { //protothema search needs decodeURIComp
 		phantom.exit(1);
 	}
 	else{
-		page.includeJs('http://lib.eap.gr/reader/libs/shortcut/shortcut.js', function() {});
-		page.includeJs('http://lib.eap.gr/reader/app/js/shortcuts.helper.js', function() {});
+		page.includeJs('http://lib.eap.gr/screenreader/libs/shortcut/shortcut.js', function() {});
+		page.includeJs('http://lib.eap.gr/screenreader/app/js/shortcuts.helper.js', function() {});
 
   		console.log(page.content);
 		phantom.exit();
