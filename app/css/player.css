@@ -1,0 +1,21 @@
+
+
+
+#playBtn.active{
+	background-color:green;
+	color:#fff;
+}
+
+#stopBtn.active{
+	background-color:red;
+		color:#fff;
+
+}
+
+#pauseBtn.active{
+	background-color:orange;
+		color:#fff;
+
+}
+
+

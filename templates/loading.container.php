@@ -1,0 +1,1 @@
+<div id="loading-container" class="row-fluid" <?php if(!isset($_GET['url'])) echo 'style="display:none;"';?>></div>

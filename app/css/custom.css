@@ -1,0 +1,225 @@
+html{height:100%;}
+body{height:100%;overflow-y:hidden;}
+
+#links{
+	position: relative;
+	width:100%;
+
+}
+
+
+.header.navbar{
+z-index:1050;
+background:#0058af!important;
+border:0;
+}
+
+.header .collapse.navbar-collapse,
+.navbar-header{
+background:#0058af!important;
+
+}
+
+
+a.navbar-brand {
+width:159px;
+height:70px;
+background:url(images/logo-splash.png) 5px 5px no-repeat;
+background-size:149px 60px;
+
+}
+
+.navbar .btn{margin:0px 5px;}
+
+
+/*Header*/
+
+
+
+.navbar{margin:0px;}
+
+#header-top>div:first-child{margin-left: 0px;}
+.header form button,.header .form-control{
+	font-size:200%;
+	height:auto;
+}
+
+/*Speech preview*/
+#speech_preview{height:70px; background:#000;margin:0px;padding:0px;overflow: hidden; text-align:center;}
+
+#speech_preview_text { white-space: nowrap; display: inline-block; color: rgb(255, 255, 0);font-size: 3em;height:70px;line-height:70px;  }
+
+
+/*Input container*/
+#splash{
+	height:100%;
+	width:100%;
+	position:absolute;
+	z-index:1999;
+	top:0;left:0;
+	background:#0058af url(images/logo-splash.png) 50% 170px no-repeat;
+	opacity:1;
+	padding-top:300px;
+
+}
+
+
+
+#splash form{
+	text-align:center;
+}
+
+#splash form button,#splash .form-control{
+	font-size:200%;
+	height:auto;
+	
+	border:6px solid rgba(255,255,255,1);
+-moz-box-shadow: none;
+-webkit-box-shadow: none;
+box-shadow: none;
+
+}
+
+
+
+#splash form button:focus,#splash .form-control:focus{
+
+	border:6px solid rgba(0,0,0,1);
+
+}
+#footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 100px;
+	background-color: #000000;
+}
+
+#footer .container p {
+	margin:5px 0;
+	min-height:10px;
+	text-align:center;
+}
+
+#footer .espa{
+	text-align:center;
+	position:relative;
+}
+
+#footer .espa img{
+	margin-top:-53px;
+	border:6px solid rgba(0,0,0,1);
+}
+
+
+
+
+/*loading*/
+#loading-container{
+	height:128px;
+	width:128px;
+	position:absolute;
+	z-index:1100;
+	top:6px;left:6px;
+
+	background:transparent url(images/loading.gif) 50% 50% no-repeat;
+
+	
+}
+#splash_message{text-align:center;font-size:32px;line-height:48px;color:#fff;}
+
+/*iframe*/
+#iframe-container{
+	margin-top:140px;
+	position:absolute;
+    top: 0px; 
+    left: 0px;
+    right: 0px; 
+    bottom: 0px;
+}
+
+#iframe{
+	position:absolute; 
+    width: 100%;
+    height: 100%;
+	margin:0;
+	padding:0;
+    border: 0px;
+	opacity:0.25;
+}
+
+
+/*Bootstrap changes*/
+.container-fluid {
+padding-right: 0px;
+padding-left: 0px;
+}
+
+.pagination {
+margin: 0px 0;
+padding:5px 0px;
+}
+
+/*Help panel*/
+#panel {
+    position:fixed;
+    right:0;
+    background: transparent;
+    float:right;
+    width:400px;
+    height: 100%;
+
+}
+#show_hide_button {
+    position:fixed;
+    width: 40px;
+    cursor: hand;
+    height: 100%;
+    top:45%;
+    background: blue;
+}
+
+#content_panel {
+    background-color: #EEEEEE;
+    border-radius: 6px 6px 6px 6px;
+    position:relative;
+
+    float:left;
+    height:100%;
+		width:100%;
+}
+
+.hidden{
+	display: none;
+}
+
+/*MEdia queries*/
+/* Large desktops and laptops */
+@media (min-width: 1200px) {
+
+}
+
+/* Portrait tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+
+}
+
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+
+}
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+
+}
+
+/* Landscape phones and smaller */
+@media (max-width: 480px) {
+	
+	#splash{
+		padding-top:60px;
+		background:#0058af url(images/logo-splash.png) 50% 5px no-repeat;
+		background-size:124px 50px;
+	}
+}
