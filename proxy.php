@@ -8,7 +8,7 @@
 	if (!file_exists(dirname(__FILE__) . '/config.php')) { die('The configuration file is missing.');}
 	require dirname(__FILE__) . '/config.php';
 
-	// Load loacl configuration data
+	// Load local configuration data
 	if (!file_exists(dirname(__FILE__) . '/config.local.php')) { die('The local configuration file is missing.');}
 	require dirname(__FILE__) . '/config.local.php';
 
@@ -84,23 +84,25 @@
 		'<link rel="stylesheet" type="text/css" href="app/css/iframe.css">'.
 		'</head>';
 		if ( trim( $file_content ) == '' ){
-		$html_start .= '<body class="'.$extension.'" onload=parent.SR.timeoutRedirect()></body>';
+			$html_start .= '<body class="'.$extension.'" onload=parent.SR.timeoutRedirect()></body>';
 		}
 		else{
-		$html_start .= '<body class="'.$extension.'">';
+			$html_start .= '<body class="'.$extension.'">';
 		}
 
 		/* Html file's created end */
 		$html_end =
-		'<audio id="player" href="#" src="">'.
-		'</audio>'.
-		'<div class="hidden">'.
-		'Τέλος σελίδας'.
-		'</div>'.
-		'</body>'.
-		'</html>';
+			'<audio id="player" href="#" src="">'.
+			'</audio>'.
+			'<div class="hidden">'.
+			'Τέλος σελίδας'.
+			'</div>'.
+			'</body>'.
+			'</html>';
+		
 		/* Add the tree parts af the html file */
 		$text = $html_start.$file_content.$html_end;
+		
 		/* Add screen_reader head elements to the html file */
 		//$text = add_head_elements($text, $url);
 	}
@@ -112,34 +114,22 @@
 		 * after having certain dom elements changed 
 		 *  */
 
-		 
-		
-		//$text = create_dom($url);
 		$parsedURL =  parse_url($url);
 		$base = $parsedURL['scheme'].'://'.$parsedURL['host'];
 		
 		//if ( ( $parsedURL['host']=='www.w3.org' || $parsedURL['host']=='www.culture.gr' ) && isset ($parsedURL['path']) )
 		if ( isset ($parsedURL['path']) )
 			$base = $parsedURL['scheme'].'://'.$parsedURL['host'].$parsedURL['path'] ;
-			
-		
-		
 		
 		if(empty($_SESSION['postdata'])){ 
 			$text =  shell_exec( $config['phantomjs_path'].'/phantomjs '.dirname(__FILE__).'/proxy.js "'. $url.'" "'.$base.'"');
 		}
 		else{
 			
-			//$formaction = $_SESSION['postdata']['formaction'] ;
 			$formaction = urlencode ( $_SESSION['postdata']['formaction'] );
 			unset ($_SESSION['postdata']['formaction']);
 			unset($_SESSION['postdata']['url']);
 
-			
-			// var_dump($config['phantomjs_path'].'/phantomjs '.dirname(__FILE__).'/form.js '. $url.' '.$base .' "'.$formaction.'" "'.http_build_query($_SESSION['postdata']).'"');
-			// die;
-			//$text =  shell_exec( $config['phantomjs_path'].'/phantomjs '.dirname(__FILE__).'/proxypost.js '. $url.' '.$base .' '.http_build_query($_SESSION['postdata']));
-			
 			$text =  shell_exec( $config['phantomjs_path'].'/phantomjs '.dirname(__FILE__).'/form.js '. $url.' '.$base .' '.$formaction.' "'.http_build_query($_SESSION['postdata']).'"');
 		}
 
@@ -150,7 +140,4 @@
 	}
 	
 	echo $text;
-	
-	
-	
 ?>

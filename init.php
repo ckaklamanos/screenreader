@@ -44,8 +44,6 @@ if(!empty($_POST)){
 
 }
 
-
-
 //Set the IP session variable 
 if(!isset($_SESSION['ip']))
 	$_SESSION['ip']=getenv ( "REMOTE_ADDR" );
@@ -61,14 +59,6 @@ if(!isset($_SESSION['access_key']))
 
 //Check the iframe URL to be loaded, depending on the window URL
 $iFrameUrl = "";		
-
-// if(isset($_SESSION['last_visit'])&&(time()-$_SESSION['last_visit'])<$config['requests_time_limit']){
-	
-	// $iFrameUrl = "proxy.php?url=".$config['templates_dir']."static/too_many_requests.html";
-	// require dirname(__FILE__) . '/'.$config['templates_dir'].'home.php';
-
-	// die;
-// }
 
 $_SESSION['last_visit']=time();
 

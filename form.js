@@ -39,7 +39,6 @@ var steps = [
   
 	function() {
 		//open the page
-		//page.open(address);
 		page.open(address, function (status) { 
 	
 				if (status !== 'success') {
@@ -96,8 +95,8 @@ var steps = [
 	function(pageobj) {
 
 		//Include the needed js
-		pageobj.includeJs('http://lib.eap.gr/reader/libs/shortcut/shortcut.js', function() {});
-		pageobj.includeJs('http://lib.eap.gr/reader/app/js/shortcuts.helper.js', function() {});
+		pageobj.includeJs('http://lib.eap.gr/screenreader/libs/shortcut/shortcut.js', function() {});
+		pageobj.includeJs('http://lib.eap.gr/screenreader/app/js/shortcuts.helper.js', function() {});
 
 		// Output content of page, after form has been submitted
 		page.evaluate(function(pageobj) {
